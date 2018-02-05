@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"/>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <table class="table table-hover">
+    	<thead>
+    		<tr>
+    			<th>id</th>
+    			<th>name</th>
+    			<th>age</th>
+    			<th>crateTime</th>
+    			<th>updateTime</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr th:each="user : ${page.getContent()}">
+    			<td th:text="${user.id}"></td>
+    			<td th:text="${user.name}"></td>
+    			<td th:text="${user.age}"></td>
+    			<td th:text="${user.createTime}"></td>
+    			<td th:text="${user.updateTime}"></td>
+    		</tr>
+    	</tbody>
+    </table>
+</body>
+<ul class="pager">
+	<li><a th:href="${page.previousPageable()}?${page.previousPageable().pageNumber}:${page.number}">Previous</a></li>
+	<li><a th:href="${page.nextPageable()}?${page.nextPageable().pageNumber}:${page.number}">Next</a></li>
+</ul>
+</html>
