@@ -9,6 +9,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
 </head>
+<div th:replace="Fragment/header :: header"></div>
 <body>
     <table class="table table-hover">
     	<thead>
@@ -23,7 +24,7 @@
     	<tbody>
     		<tr th:each="user : ${page.getContent()}">
     			<td th:text="${user.id}"></td>
-    			<td th:text="${user.name}"></td>
+    			<td ><a href="view.html" th:href="@{'~/user/'+${user.id}}" th:text="${user.name}"></a></td>
     			<td th:text="${user.age}"></td>
     			<td th:text="${user.createTime}"></td>
     			<td th:text="${user.updateTime}"></td>
