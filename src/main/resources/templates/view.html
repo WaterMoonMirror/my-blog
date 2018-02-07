@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"/>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+</head>
+<body th:object="${user}">
+<div th:replace="Fragment/header :: header"></div>
+<h2>用户详细信息:<span class="label label-default" th:text="*{name}">New</span></h2>
+<h3>ID:<span class="label label-default" th:text="*{id}">New</span></h3>
+<h3>NAME:<span class="label label-default" th:text="*{name}">New</span></h3>
+<h3>AGE:<span class="label label-default" th:text="*{age}">New</span></h3>
+<h3>CRATETIME:<span class="label label-default" th:text="*{createTime}">New</span></h3>
+<h3>UPDATETIME:<span class="label label-default" th:text="*{updateTime}">New</span></h3>
+<input name="" id="" class="btn btn-primary"  th:href="@{'~/user/form/'+${user.id}}" type="button" value="修改"/>
+</body>
+</html>
